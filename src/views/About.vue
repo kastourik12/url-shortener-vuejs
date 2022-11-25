@@ -1,10 +1,12 @@
 <template>
-
+  <div class="flex">
+    <p>About</p>
+  </div>
 </template>
 
 <script>
 export default {
-  name: "Header"
+  name: "About"
 }
 </script>
 
