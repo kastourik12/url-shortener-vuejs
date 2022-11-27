@@ -1,7 +1,10 @@
 <template>
-  <Sidebar />
-    <p>Home</p>
-</template>
+  <div class="body-wrapper">
+   <div class="text-box">
+
+   </div>
+  </div>
+ </template>
 
 <script>
 

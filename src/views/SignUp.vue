@@ -1,8 +1,8 @@
 <template>
   <div class="body-wrapper">
-  <div class="card">
+  <div class="card group">
     <div class="card-header">
-      <h1>SignUp</h1>
+      <h1 class="text-primary">SignUp</h1>
     </div>
     <div class="card-body text-left">
       <form class="flex flex-col text-left">
@@ -21,8 +21,8 @@
 
       </form>
     </div>
-    <div class="card-footer">
-      <button>Submit</button>
+    <div class="card-footer ">
+      <button class="group-hover:text-accent-2 group-hover:bg-secondary">Submit</button>
     </div>
   </div>
   </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed top-0 left-0 h-screen w-16 m-0 flex flex-col bg-gray-900 text-white shadow-lg justify-between">
+  <div class="fixed top-0 left-0 h-screen w-16 m-0 flex flex-col bg-secondary shadow-lg justify-between">
     <div class="">
     <SideBarLink v-for="link in links1" :key="link.name" :link="link" />
     </div>

@@ -7,7 +7,7 @@
 
 <style>
 .body{
-  @apply p-0 m-0 bg-gray-600;
+  @apply p-0 m-0 bg-accent;
 }
 </style>
 <script>
