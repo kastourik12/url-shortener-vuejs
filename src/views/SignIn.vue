@@ -1,5 +1,5 @@
 <template>
-  <div class="body-wrapper">
+
     <div class="card group">
       <div class="card-header">
         <h1 class="text-primary">SignIn</h1>
@@ -20,7 +20,7 @@
         <button class="group-hover:text-accent-2 group-hover:bg-secondary">Submit</button>
       </div>
     </div>
-    </div>
+
 </template>
 
 <script>

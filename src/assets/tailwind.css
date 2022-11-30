@@ -27,12 +27,25 @@
         transition-all duration-100 scale-0 origin-left;
     }
     .body-wrapper{
-        @apply flex top-48 flex flex-col items-center justify-center
-    w-screen h-screen
+        @apply items-center ml-16 h-screen
+        bg-accent justify-between grid grid-cols-3  gap-4
 
     }
+    .body-top{
+        @apply items-center mt-12 text-center
+        w-full
+    }
+    .body-bottom{
+        @apply items-center mb-12 text-center
+        w-full
+    }
+    .body-mid{
+        @apply items-center mt-12 text-center
+        w-full
+    }
+
     .card{
-        @apply flex flex-col items-center justify-center
+        @apply items-center justify-center
         bg-secondary
         text-white dark:text-white
         rounded-3xl
