@@ -13,6 +13,7 @@
 
 <script>
 import SideBarLink from "@/components/SideBar/SideBarLink";
+import {Link} from "@/components/SideBar/link";
 export default {
   name: "Sidebar",
   components: {SideBarLink},
@@ -22,7 +23,7 @@ export default {
         {name: "Home", icon: "fa-solid fa-house", href: "/"},
         {name: "Services", icon: "fa fa-cogs", href: "/services"},
         {name: "Sign In", icon: "fa-solid fa-arrow-right-to-bracket", href: "/signIn"},
-        {name: "Sign Up", icon: "fa-solid fa-user-plus", href: "/signUp"},
+        {name: "Sign Up", icon: "fa-solid fa-user-plus", href: "/signUp"}
       ],
       links2: [
         {name: "About", icon: "fa-solid fa-circle-question", href: "/about"}

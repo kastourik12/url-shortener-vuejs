@@ -1,6 +1,6 @@
 <template>
   <div class=""></div>
-  <form>
+  <form @submit.prevent="submitSignUp">
   <div class="card group ">
     <div class="card-header">
       <h1 class="">SignUp</h1>
@@ -17,7 +17,7 @@
       </div>
       <div class="input-field">
         <label>Email</label>
-        <input type="text"  v-model="signUPRequest.email" required >
+        <input type="text"  @keyup.enter="submitSignUp" v-model="signUPRequest.email" required >
       </div>
       </div>
     </div>
@@ -38,6 +38,11 @@ export default {
         password:'',
         email:'',
       }
+    }
+  },
+  methods:{
+    submitSignUp(event){
+
     }
   }
 }
