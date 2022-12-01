@@ -1,36 +1,45 @@
 <template>
-  <div class="body-wrapper">
-  <div class="card group">
+  <div class=""></div>
+  <form>
+  <div class="card group ">
     <div class="card-header">
-      <h1 class="text-primary">SignUp</h1>
+      <h1 class="">SignUp</h1>
     </div>
-    <div class="card-body text-left">
-      <form class="flex flex-col text-left">
+    <div class="card-body">
+      <div class="flex flex-col text-left">
         <div class="input-field ">
         <label >Username</label>
-        <input type="text"  required >
+        <input type="text"  v-model="signUPRequest.username" required >
       </div>
       <div class="input-field">
         <label>Password</label>
-        <input type="password"  required >
+        <input type="password"  v-model="signUPRequest.password" required >
       </div>
       <div class="input-field">
         <label>Email</label>
-        <input type="text"  required >
+        <input type="text"  v-model="signUPRequest.email" required >
       </div>
-
-      </form>
+      </div>
     </div>
     <div class="card-footer ">
-      <button class="group-hover:text-accent-2 group-hover:bg-secondary">Submit</button>
+      <button type="submit">Submit</button>
     </div>
   </div>
-  </div>
+  </form>
 </template>
 
 <script>
 export default {
-  name: "SignUp"
+  name: "SignUp",
+  data(){
+    return {
+      signUPRequest:{
+        username:'',
+        password:'',
+        email:'',
+      }
+    }
+  }
 }
 </script>
 

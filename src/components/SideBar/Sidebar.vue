@@ -1,14 +1,15 @@
 <template>
-  <div class="fixed top-0 left-0 h-screen w-16 m-0 flex flex-col bg-secondary shadow-lg justify-between">
+
+    <div class="sidebar">
     <div class="">
     <SideBarLink v-for="link in links1" :key="link.name" :link="link" />
     </div>
-    <div class="">
+   <div class="">
     <SideBarLink v-for="link in links2" :key="link.name" :link="link" />
     </div>
-  </div>
+    </div>
 
-</template>
+  </template>
 
 <script>
 import SideBarLink from "@/components/SideBar/SideBarLink";
@@ -25,10 +26,12 @@ export default {
       ],
       links2: [
         {name: "About", icon: "fa-solid fa-circle-question", href: "/about"}
-      ]
-
+      ],
     }
-
+  },
+  methods: {
+    toggleSideBar(){
+    }
   }
 }
 </script>

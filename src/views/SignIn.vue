@@ -1,8 +1,8 @@
 <template>
-
+  <div class=""></div>
     <div class="card group">
       <div class="card-header">
-        <h1 class="text-primary">SignIn</h1>
+        <h1>SignIn</h1>
       </div>
       <div class="card-body text-left">
         <form class="flex flex-col text-left">
@@ -16,11 +16,11 @@
           </div>
         </form>
       </div>
-      <div class="card-footer ">
-        <button class="group-hover:text-accent-2 group-hover:bg-secondary">Submit</button>
+      <div class="card-footer">
+        <button >Submit</button>
       </div>
     </div>
-
+  <div class=""></div>
 </template>
 
 <script>
