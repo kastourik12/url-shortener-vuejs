@@ -15,10 +15,6 @@
         <label>Password</label>
         <input type="password"  v-model="signUPRequest.password" required >
       </div>
-      <div class="input-field">
-        <label>Email</label>
-        <input type="text"  @keyup.enter="submitSignUp" v-model="signUPRequest.email" required >
-      </div>
       </div>
     </div>
     <div class="card-footer ">
@@ -29,20 +25,39 @@
 </template>
 
 <script>
+import AuthAPI from "@/services/auth-service";
+import {reactive} from "vue";
 export default {
   name: "SignUp",
   data(){
+    const  signUPRequest = reactive({
+      username:'',
+      password:'',
+    });
     return {
-      signUPRequest:{
-        username:'',
-        password:'',
-        email:'',
-      }
+      signUPRequest
+    }
+  },
+  computed: {
+    loggedIn() {
+      return this.$store.state.auth.status.loggedIn;
+    },
+  },
+  created() {
+    if(this.loggedIn()){
+
     }
   },
   methods:{
-    submitSignUp(event){
-
+    submitSignUp(){
+      AuthAPI.signUp(this.signUPRequest).then(
+          res => {
+            this.$toast.info(res.data)
+            this.$router.push('/signIn')
+          }
+      ).catch(
+          err => this.$toast.error(err.response.data)
+      )
     }
   }
 }

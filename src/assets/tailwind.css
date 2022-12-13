@@ -78,14 +78,14 @@
     }
 
     .input-field{
-        @apply flex flex-col mb-4 mt-4 pt-4 pb-12 w-full h-12
+        @apply flex flex-col mb-4 mt-4 pt-4 pb-12 w-full h-12 text-black
         text-left
         transition-all duration-300 ease-linear
         cursor-pointer ;
     }
     .input-field label{
         @apply flex flex-row float-left items-center justify-start w-full h-6 mt-2 mb-2
-        text-left
+        text-left text-accent-2
         transition-all duration-300 ease-linear
         cursor-pointer ;
     }
@@ -96,7 +96,6 @@
         block w-full p-2.5 dark:bg-gray-700 border-gray-600
         placeholder-gray-400  focus:ring-blue-500
         focus:border-blue-500;
-        width: 200px;
     }
     .card-footer button{
         @apply focus:outline-none text-white
