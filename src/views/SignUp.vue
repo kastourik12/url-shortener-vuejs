@@ -25,27 +25,18 @@
 </template>
 
 <script>
-import AuthAPI from "@/services/auth-service";
+import AuthAPI from "@/services/AuthAPI";
 import {reactive} from "vue";
+
 export default {
   name: "SignUp",
   data(){
     const  signUPRequest = reactive({
       username:'',
       password:'',
-    });
+    })
     return {
       signUPRequest
-    }
-  },
-  computed: {
-    loggedIn() {
-      return this.$store.state.auth.status.loggedIn;
-    },
-  },
-  created() {
-    if(this.loggedIn()){
-
     }
   },
   methods:{

@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import AuthAPI from "@/services/auth-service";
+import AuthAPI from "@/services/AuthAPI";
 import {reactive} from "vue";
 
 export default {
@@ -41,15 +41,14 @@ export default {
   },
   methods:{
     submitSignIn(){
-      this.$store.dispatch("auth/login").then(
-          () => {
-            this.$toast.success("successfully")
-            this.$router.push("/home")
-          },
-          (error) =>{
-            this.$toast.error(error.data)
-          }
-      )}
+      AuthAPI.signIn(this.signInRequest).then(
+          res => {
+            this.$toast.info("Logged in successfully,welcome back Mr" + res.data.username)
+            localStorage.setItem('token',res.data.accessToken)
+          }).catch(
+          err => this.$toast.error(err.response.data)
+      )
+    }
   }
 }
 </script>

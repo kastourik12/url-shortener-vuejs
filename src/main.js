@@ -7,11 +7,10 @@ import {fas} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 import Toaster from "@meforma/vue-toaster";
 import './services/axios'
-import store from "@/store";
 library.add(fas);
 dom.watch()
 
 
 
 
-createApp(App).component("font-awesome-icon",FontAwesomeIcon).use(router).use(store).use(Toaster).mount('#app')
+createApp(App).component("font-awesome-icon",FontAwesomeIcon).use(router).use(Toaster).mount('#app')
