@@ -24,34 +24,24 @@
   </form>
 </template>
 
-<script>
-import AuthAPI from "@/services/AuthAPI";
-import {reactive} from "vue";
+<script setup>
+import {inject, reactive} from "vue";
+import authService from "@/services/auth.service";
 
-export default {
-  name: "SignUp",
-  data(){
-    const  signUPRequest = reactive({
-      username:'',
-      password:'',
-    })
-    return {
-      signUPRequest
-    }
-  },
-  methods:{
-    submitSignUp(){
-      AuthAPI.signUp(this.signUPRequest).then(
-          res => {
-            this.$toast.info(res.data)
-            this.$router.push('/signIn')
-          }
-      ).catch(
-          err => this.$toast.error(err.response.data)
-      )
-    }
-  }
+const  signUPRequest = reactive({
+  username:'',
+  password:'',
+})
+const toast = inject("toast")
+function submitSignUp(){
+  authService.signUp(signUPRequest)
+      .then((res) => toast.show(res.data,{type:"success"}))
+      .catch((e) =>toast.show(e.response.data,{type:"error"}))
 }
+function onMounted(){
+
+}
+
 </script>
 
 <style scoped>

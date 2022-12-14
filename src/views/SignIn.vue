@@ -1,6 +1,6 @@
 <template>
   <div class=""></div>
-  <form @submit.prevent="submitSignIn">
+  <form @submit.prevent="login">
     <div class="card group ">
       <div class="card-header">
         <h1 class="">SignIn</h1>
@@ -24,33 +24,28 @@
   </form>
 </template>
 
-<script>
-import AuthAPI from "@/services/AuthAPI";
-import {reactive} from "vue";
+<script setup>
+import {AuthStore} from "@/store";
+import {inject, reactive} from "vue";
+import authService from "@/services/auth.service";
+const authStore = AuthStore()
+const toast = inject("toast")
 
-export default {
-  name: "SignIn",
-  data(){
-    const signInRequest = reactive({
-      username:'',
-      password:'',
-    });
-    return {
-      signInRequest
-    }
-  },
-  methods:{
-    submitSignIn(){
-      AuthAPI.signIn(this.signInRequest).then(
-          res => {
-            this.$toast.info("Logged in successfully,welcome back Mr" + res.data.username)
-            localStorage.setItem('token',res.data.accessToken)
-          }).catch(
-          err => this.$toast.error(err.response.data)
-      )
-    }
-  }
+const signInRequest = reactive({
+  username:'',
+  password:'',
+});
+
+const login =  () => {
+  authService.signIn(signInRequest)
+      .then((response) => {
+        const user = response.data
+        authStore.saveUser(user)
+        toast.show("welcome back mr " + user.username +"!",{type:"succes"})
+      })
+      .catch((error) => toast.show(error.response.data,{type:"error"}))
 }
+
 </script>
 
 <style scoped>
