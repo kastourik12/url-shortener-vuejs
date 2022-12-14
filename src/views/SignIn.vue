@@ -41,7 +41,7 @@ const login =  () => {
       .then((response) => {
         const user = response.data
         authStore.saveUser(user)
-        toast.show("welcome back mr " + user.username +"!",{type:"succes"})
+        toast.show("welcome back mr " + user.username +"!",{type:"success"})
       })
       .catch((error) => toast.show(error.response.data,{type:"error"}))
 }

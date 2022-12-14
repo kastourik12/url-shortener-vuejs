@@ -25,7 +25,7 @@ export default {
         {name: "Sign In", icon: "fa-solid fa-arrow-right-to-bracket", href: "/signIn"},
         {name: "Sign Up", icon: "fa-solid fa-user-plus", href: "/signUp"}
       ],
-      links2: [
+      links2:[
         {name: "About", icon: "fa-solid fa-circle-question", href: "/about"}
       ],
     }
