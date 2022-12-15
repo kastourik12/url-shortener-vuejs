@@ -1,6 +1,5 @@
-<template>
-  <div class=""></div>
-  <form @submit.prevent="login">
+<template class="form-body">
+  <form @submit.prevent="login" >
     <div class="card group ">
       <div class="card-header">
         <h1 class="">SignIn</h1>
@@ -11,14 +10,14 @@
             <label >Username</label>
             <input type="text"  v-model="signInRequest.username" required >
           </div>
-          <div class="input-field">
+          <div class="input-field ">
             <label>Password</label>
             <input type="password"  v-model="signInRequest.password" required >
           </div>
         </div>
       </div>
       <div class="card-footer ">
-        <button type="submit">Submit</button>
+        <button class="button" type="submit">Submit</button>
       </div>
     </div>
   </form>
@@ -28,6 +27,7 @@
 import {AuthStore} from "@/store";
 import {inject, reactive} from "vue";
 import authService from "@/services/auth.service";
+import router from "@/router";
 const authStore = AuthStore()
 const toast = inject("toast")
 
@@ -42,6 +42,8 @@ const login =  () => {
         const user = response.data
         authStore.saveUser(user)
         toast.show("welcome back mr " + user.username +"!",{type:"success"})
+        location.reload()
+        router.push('/about')
       })
       .catch((error) => toast.show(error.response.data,{type:"error"}))
 }

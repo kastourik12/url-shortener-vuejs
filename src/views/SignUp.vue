@@ -1,5 +1,4 @@
 <template>
-  <div class=""></div>
   <form @submit.prevent="submitSignUp">
   <div class="card group ">
     <div class="card-header">
@@ -15,10 +14,19 @@
         <label>Password</label>
         <input type="password"  v-model="signUPRequest.password" required >
       </div>
+      <div class="input-field">
+        <label>Email</label>
+        <input type="email"  v-model="signUPRequest.password" required >
+      </div>
+      <div class="input-field">
+        <label>Full Name</label>
+        <input type="email"  v-model="signUPRequest.password" required >
+      </div>
+
       </div>
     </div>
     <div class="card-footer ">
-      <button type="submit">Submit</button>
+      <button class="button" type="submit">Submit</button>
     </div>
   </div>
   </form>

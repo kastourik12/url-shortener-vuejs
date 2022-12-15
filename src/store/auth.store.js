@@ -6,6 +6,11 @@ export const AuthStore = defineStore({
     state: () => ({
         user: JSON.parse(localStorage.getItem('user')),
     }),
+    getters:{
+        isLoggedIn() {
+            return !!this.user;
+        }
+    },
     actions: {
         saveUser(user){
             this.user = user

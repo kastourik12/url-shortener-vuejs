@@ -30,11 +30,14 @@
         transition-all duration-100 scale-0 origin-left;
     }
     .body-wrapper{
-        @apply grid grid-cols-3 gap-4 ml-16 h-screen bg-gradient-to-br from-secondary to-accent
+        @apply grid gap-4 ml-16 h-screen bg-gradient-to-br from-secondary to-accent
           justify-center items-center align-middle ;
     }
+    .home-body{
+        @apply grid grid-cols-2
+    }
     .body-left-col{
-        @apply flex flex-col items-center text-center align-top
+        @apply flex flex-col items-center text-center align-top ml-4
         w-full
     }
     .body-right-col{
@@ -47,7 +50,7 @@
     }
 
     .card{
-        @apply items-center justify-center
+        @apply items-center justify-center w-96
         bg-gradient-to-br from-secondary to-accent
         text-accent-2 dark:text-white
         rounded-3xl
@@ -81,7 +84,8 @@
         @apply flex flex-col mb-4 mt-4 pt-4 pb-12 w-full h-12 text-black
         text-left
         transition-all duration-300 ease-linear
-        cursor-pointer ;
+        cursor-pointer  ;
+
     }
     .input-field label{
         @apply flex flex-row float-left items-center justify-start w-full h-6 mt-2 mb-2
@@ -97,17 +101,18 @@
         placeholder-gray-400  focus:ring-blue-500
         focus:border-blue-500;
     }
-    .card-footer button{
+    .button{
         @apply focus:outline-none text-white
         bg-gradient-to-br from-secondary to-primary
         focus:ring-opacity-50
         cursor-pointer text-accent-2
         font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 ;
     }
-    .card-footer button:hover{
+    .button:hover{
         @apply
         hover:from-secondary hover:to-primary font-bold
         hover:drop-shadow-md
     }
+
 
 }

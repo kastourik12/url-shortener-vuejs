@@ -1,6 +1,6 @@
 <template>
+  <Sidebar />
   <div class="body-wrapper">
-    <Sidebar />
     <router-view />
   </div>
 </template>
