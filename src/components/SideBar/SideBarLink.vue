@@ -1,25 +1,16 @@
 <template>
 <div className="sidebar-link group">
-<router-link :to="link.href">
-  <i :class="link.icon"> </i>
-  <span className="sidebar-tooltip group-hover:scale-100"> {{link.name}} </span>
+<router-link :to=" props.link.href" >
+  <i :class="props.link.icon" > </i>
+  <span className="sidebar-tooltip group-hover:scale-100"> {{props.link.name}} </span>
   </router-link>
 </div>
 </template>
 
-<script>
-import {Link} from "@/components/SideBar/link";
+<script setup>
+const props = defineProps(['link'])
 
-export default {
-  name: "SideBarLink",
 
-  props: {
-    link: {
-      type: Link,
-      required: true
-    }
-  }
-}
 </script>
 
 <style >

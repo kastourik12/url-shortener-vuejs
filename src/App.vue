@@ -1,6 +1,6 @@
 <template>
-  <div class="flex body">
-    <Sidebar />
+  <Sidebar />
+  <div class="body-wrapper">
     <router-view />
   </div>
 </template>

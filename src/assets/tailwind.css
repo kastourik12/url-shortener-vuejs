@@ -11,10 +11,13 @@
     padding: 0;
 }
 @layer components {
+    .sidebar{
+       @apply fixed top-0 left-0 h-screen w-16 m-0 flex flex-col bg-gradient-to-br from-secondary to-accent shadow-xl justify-between;
+    }
     .sidebar-link {
         @apply relative flex items-center justify-center
         h-12 w-12 mt-2 mb-2 mx-auto
-        bg-primary hover:bg-accent-2
+        bg-gradient-to-br from-secondary to-primary
         text-accent-2 hover:text-white
         hover:rounded-xl rounded-3xl
         transition-all duration-300 ease-linear
@@ -27,31 +30,49 @@
         transition-all duration-100 scale-0 origin-left;
     }
     .body-wrapper{
-        @apply flex top-48 flex flex-col items-center justify-center
-    w-screen h-screen
-
+        @apply grid gap-4 ml-16 h-screen bg-gradient-to-br from-secondary to-accent
+          justify-center items-center align-middle ;
     }
+    .home-body{
+        @apply grid grid-cols-2
+    }
+    .body-left-col{
+        @apply flex flex-col items-center text-center align-top ml-4
+        w-full
+    }
+    .body-right-col{
+        @apply flex flex-col items-center text-center
+        w-full
+    }
+    .body-mid-col{
+        @apply  flex flex-col items-center text-center
+        w-full
+    }
+
     .card{
-        @apply flex flex-col items-center justify-center
-        bg-secondary
-        text-white dark:text-white
+        @apply items-center justify-center w-96
+        bg-gradient-to-br from-secondary to-accent
+        text-accent-2 dark:text-white
         rounded-3xl
         transition-all duration-300 ease-linear
         cursor-pointer shadow-lg ;
     }
     .card:hover{
-        @apply bg-accent-2 text-primary ;
+        @apply
+        hover:from-secondary hover:to-primary hover:drop-shadow-2xl ;
     }
     .card-body{
         @apply flex flex-col items-center justify-center w-full h-full pb-24
-        text-left m-20
         transition-all duration-300 ease-linear
         cursor-pointer  ;
     }
     .card-header{
-        @apply flex flex-col items-center justify-center w-full h-1/4 pt-8
-        transition-all duration-300 ease-linear
+        @apply flex flex-col items-center justify-center w-full h-1/4 pt-8 text-center
+        transition-all duration-300 ease-linear shadow-sm
         cursor-pointer ;
+    }
+    .card-header h1{
+        @apply mb-4
     }
     .card-footer{
         @apply flex flex-row items-center justify-center w-full h-12 pb-16
@@ -60,14 +81,15 @@
     }
 
     .input-field{
-        @apply flex flex-col mb-4 mt-4 pt-4 pb-12 w-full h-12
+        @apply flex flex-col mb-4 mt-4 pt-4 pb-12 w-full h-12 text-black
         text-left
         transition-all duration-300 ease-linear
-        cursor-pointer ;
+        cursor-pointer  ;
+
     }
     .input-field label{
         @apply flex flex-row float-left items-center justify-start w-full h-6 mt-2 mb-2
-        text-left
+        text-left text-accent-2
         transition-all duration-300 ease-linear
         cursor-pointer ;
     }
@@ -79,11 +101,18 @@
         placeholder-gray-400  focus:ring-blue-500
         focus:border-blue-500;
     }
-    .card-footer button{
-        @apply focus:outline-none text-white bg-primary focus:ring-opacity-50
-        transition-all duration-300 ease-linear
-        cursor-pointer
+    .button{
+        @apply focus:outline-none text-white
+        bg-gradient-to-br from-secondary to-primary
+        focus:ring-opacity-50
+        cursor-pointer text-accent-2
         font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 ;
     }
+    .button:hover{
+        @apply
+        hover:from-secondary hover:to-primary font-bold
+        hover:drop-shadow-md
+    }
+
 
 }

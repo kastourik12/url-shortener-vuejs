@@ -1,17 +1,25 @@
 <template>
-  <div class="body-wrapper">
-   <div class="text-box">
-
-   </div>
+  <div class="home-body">
+  <div class="body-left-col">
+    <UrlShortner/>
   </div>
- </template>
+  <div class="body-right-col">
+    <p class="text-center"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. A culpa distinctio, dolor eius error facere
+    facilis laboriosam modi neque nobis nostrum quae repudiandae,
+    sapiente sequi sint tempora tenetur ut voluptatibus.
+    </p>
+  </div>
+  </div>
+</template>
 
 <script>
 
 import Sidebar from "@/App";
+import UrlShortner from "@/components/UrlShortner/UrlShortner";
 export default {
   name: "Home",
   components: {
+    UrlShortner,
     Sidebar
   }
 }
