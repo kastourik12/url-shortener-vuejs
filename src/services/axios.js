@@ -1,7 +1,7 @@
 import axios from "axios";
-import {BASE_URI} from "@/services/const";
+import {BASE_URL} from "@/services/const";
 import {AuthStore} from "@/store";
-axios.defaults.baseURL= BASE_URI;
+axios.defaults.baseURL= BASE_URL;
 
 axios.interceptors.response.use(function (response) {
     return response;

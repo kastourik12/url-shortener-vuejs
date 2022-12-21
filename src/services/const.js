@@ -1,4 +1,3 @@
-
-export const BASE_URI ="https://url-shortner-production-91e8.up.railway.app"
+export const BASE_URL =import.meta.env.BASE_URL
 
 
