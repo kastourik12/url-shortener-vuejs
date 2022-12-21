@@ -16,11 +16,11 @@
       </div>
       <div class="input-field">
         <label>Email</label>
-        <input type="email"  v-model="signUPRequest.password" required >
+        <input type="email"  v-model="signUPRequest.email" required >
       </div>
       <div class="input-field">
         <label>Full Name</label>
-        <input type="email"  v-model="signUPRequest.password" required >
+        <input type="tel"  v-model="signUPRequest.fullName" required >
       </div>
 
       </div>
@@ -40,6 +40,8 @@ import {toast} from "@/services/toaster";
 const  signUPRequest = reactive({
   username:'',
   password:'',
+  email:'',
+  fullName:''
 })
 
 function submitSignUp(){
