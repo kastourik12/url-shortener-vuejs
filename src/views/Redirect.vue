@@ -4,17 +4,17 @@
 
 <script setup>
 import shortUrlService from "@/services/short-url.service";
-import {inject, onMounted} from "vue";
+import {onMounted} from "vue";
 import {useRoute} from "vue-router";
+import {toast} from "@/services/toaster";
 const route = useRoute()
-const toast = inject("toast")
 
 onMounted(  () =>{
     shortUrlService.getRedirectionUrl(route.path).then((res)=>{
-      toast.show("redirecting to " + res.data.url)
-      toast.show("visited times : "+ res.data.visitedTimes)
+      toast.success("redirecting to " + res.data.url)
+      toast.success("visited times : "+ res.data.visitedTimes)
       setTimeout(() => window.location.replace(res.data.url),
-      1000)
+      3000)
     }
    )
 } )
