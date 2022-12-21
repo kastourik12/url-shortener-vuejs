@@ -25,11 +25,12 @@
 
 <script setup>
 import {AuthStore} from "@/store";
-import {inject, reactive} from "vue";
+import {reactive} from "vue";
 import authService from "@/services/auth.service";
 import router from "@/router";
+import {toast} from "@/services/toaster";
 const authStore = AuthStore()
-const toast = inject("toast")
+
 
 const signInRequest = reactive({
   username:'',
@@ -41,11 +42,11 @@ const login =  () => {
       .then((response) => {
         const user = response.data
         authStore.saveUser(user)
-        toast.show("welcome back mr " + user.username +"!",{type:"success"})
+        toast.success("welcome back mr " + user.username +"!",{type:"success"})
         location.reload()
         router.push('/about')
       })
-      .catch((error) => toast.show(error.response.data,{type:"error"}))
+      .catch((error) => toast.error(error.response.data,{type:"error"}))
 }
 
 </script>

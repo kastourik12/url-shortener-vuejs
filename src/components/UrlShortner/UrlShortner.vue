@@ -29,11 +29,12 @@
 
 <script setup>
 import shortUrlService from "@/services/short-url.service";
-import {inject, reactive, ref} from "vue";
+import {reactive, ref} from "vue";
+import {toast} from "@/services/toaster";
 const shortUrlCreationRequest = reactive({
   url:''
 });
-const toast = inject("toast")
+
 let shortUrl = reactive({
   url:'',
   visitedTimes:'',
@@ -44,22 +45,12 @@ const shortened = ref(false)
 const  createShortUrl= () =>{
     shortUrlService.createShortUrl(shortUrlCreationRequest).then( (res) =>{
         shortened.value = true
-        toast.show("created " + res.data.url, {
-          type:"info",
-          duration:false,
-          queue: true,
-          onClick: () =>{
-            navigator.clipboard.writeText(res.data.url)
-            toast.show("link copied to clipboard",{type:"success"})
-          }
+        toast.show(res.data.url,{
+          type: "success",
+          onClick: () =>{ navigator.clipboard.writeText(res.data.url)
+            toast.success("link copied to clipboard")}
         })
-        shortUrl = res.data
-      console.log(shortUrl)
-        }
-    ).catch((e) => {
-      toast.show(e.response.data,{type:"error"})
-    })
-  }
+    }).catch(e => toast.error(e.response.data))}
 </script>
 
 <style scoped>

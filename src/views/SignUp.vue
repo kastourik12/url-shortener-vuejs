@@ -35,19 +35,17 @@
 <script setup>
 import {inject, reactive} from "vue";
 import authService from "@/services/auth.service";
+import {toast} from "@/services/toaster";
 
 const  signUPRequest = reactive({
   username:'',
   password:'',
 })
-const toast = inject("toast")
+
 function submitSignUp(){
   authService.signUp(signUPRequest)
-      .then((res) => toast.show(res.data,{type:"success"}))
-      .catch((e) =>toast.show(e.response.data,{type:"error"}))
-}
-function onMounted(){
-
+      .then((res) => toast.success(res.data,{type:"success"}))
+      .catch((e) =>toast.warning(e.response.data,{type:"error"}))
 }
 
 </script>
