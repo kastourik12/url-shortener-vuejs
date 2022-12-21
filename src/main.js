@@ -5,7 +5,7 @@ import './assets/tailwind.css'
 import {dom, library} from "@fortawesome/fontawesome-svg-core";
 import {fas} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
-import Toaster from "@incuca/vue3-toaster";
+import Toaster from '@meforma/vue-toaster';
 import './services/axios'
 import {createPinia} from "pinia";
 library.add(fas);
@@ -19,4 +19,5 @@ createApp(App)
     .use(router)
     .use(Toaster)
     .use(pinia)
+    .provide('toast')
     .mount('#app')

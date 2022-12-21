@@ -15,7 +15,7 @@
 <script>
 
 import Sidebar from "@/App";
-import UrlShortner from "@/components/UrlShortner/UrlShortner";
+import UrlShortner from "@/components/UrlShortner/UrlShortner.vue";
 export default {
   name: "Home",
   components: {

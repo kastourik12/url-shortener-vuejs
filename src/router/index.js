@@ -30,6 +30,11 @@ const routes = [
     meta: {
       authenticated: false
     }
+  },
+  {
+    path: '/re/:shortUrl',
+    name: 'redirect',
+    component: () => import('../views/Redirect.vue')
   }
 
 ]

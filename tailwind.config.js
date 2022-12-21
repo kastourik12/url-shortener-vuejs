@@ -2,14 +2,14 @@
 const colors = require("tailwindcss/colors");
 module.exports = {
   mode: "jit",
-  content: ['./public/**/*.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+  content: ['./*.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
-        primary: '#CABFAB',
-        secondary: '#41444B',
-        accent: '#52575D',
-        'accent-2': '#DFD8C8',
+        primary: '#BFEAF5',
+        secondary: '#82AAE3',
+        accent: '#91D8E4',
+        'accent-2': '#EAFDFC',
       }
     },
   },

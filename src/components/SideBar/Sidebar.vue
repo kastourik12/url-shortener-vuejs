@@ -12,7 +12,7 @@
   </template>
 
 <script setup>
-import SideBarLink from "@/components/SideBar/SideBarLink";
+import SideBarLink from "@/components/SideBar/SideBarLink.vue";
 import {AuthStore} from "@/store";
 import {ref} from "vue";
 

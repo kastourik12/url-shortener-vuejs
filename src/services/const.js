@@ -1,4 +1,4 @@
 
-export const BASE_URI ="http://localhost:8082/"
+export const BASE_URI ="https://url-shortner-production-91e8.up.railway.app"
 
 
