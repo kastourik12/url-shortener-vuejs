@@ -12,12 +12,12 @@
 }
 @layer components {
     .sidebar{
-       @apply fixed top-0 left-0 h-screen w-16 m-0 flex flex-col bg-gradient-to-br from-secondary to-accent shadow-xl justify-between;
+       @apply fixed top-0 left-0 h-screen w-16 m-0 flex flex-col bg-secondary  shadow-xl justify-between;
     }
     .sidebar-link {
         @apply relative flex items-center justify-center
         h-12 w-12 mt-2 mb-2 mx-auto
-        bg-gradient-to-br from-secondary to-primary
+        bg-secondary
         text-accent-2 hover:text-white
         hover:rounded-xl rounded-3xl
         transition-all duration-300 ease-linear
@@ -25,12 +25,12 @@
     }
     .sidebar-tooltip{
         @apply absolute w-auto p-2 m-2 min-w-max left-14 rounded-md shadow-md
-        text-white bg-accent-2
+        text-white bg-primary
         text-xs font-bold
         transition-all duration-100 scale-0 origin-left;
     }
     .body-wrapper{
-        @apply grid gap-4 ml-16 h-screen bg-gradient-to-br from-secondary to-accent
+        @apply grid gap-4 ml-16 h-screen bg-accent
           justify-center items-center align-middle ;
     }
     .home-body{
@@ -51,7 +51,7 @@
 
     .card{
         @apply items-center justify-center w-96
-        bg-gradient-to-br from-secondary to-accent
+        bg-secondary
         text-accent-2 dark:text-white
         rounded-3xl
         transition-all duration-300 ease-linear
